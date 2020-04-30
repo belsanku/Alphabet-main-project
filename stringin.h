@@ -1,3 +1,3 @@
 #pragma once
 using namespace std;
-void stringin(string& 
+void stringin(string& l, string& x);
