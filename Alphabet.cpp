@@ -18,50 +18,22 @@
 #include "Createfile.h"
 #include "stringin.h"
 #include "assistant.h"
+#include "choose.h"
 
 using namespace std;
 
 
+
 int main()
 {
-	setlocale(LC_ALL, "English");
+	system("chcp 1251");
 	string x, l;
 	const int KEY_ESC = 27;
 	cout << "To exit, press ESC. For help, write 'help'" << endl;
 	assistant();
 	cout<<endl;
-	getline(cin, x);
 	while (_kbhit() != KEY_ESC)
 	{
-		//getline(cin, x);
-		if (x == "help")
-		{
-			cout << endl;
-			assistant();
-			cout << endl;
-		}
-		else
-			if (x == "sort -d file")
-			{
-				CreateFile(x);
-			}
-			else
-				if (x == "sort -d string")
-				{
-					stringin(l, x);
-				}
-				else
-					if (x == "sort -d -A string")
-					{
-						stringin(l, x);
-					}
-					else
-						if (x == "sort -d -A file")
-						{
-							CreateFile(x);
-						}
-		//else cout << "input error" << endl;
-		cout << endl;
-		getline(cin, x);
+		choose(l, x);
 	}
 }
