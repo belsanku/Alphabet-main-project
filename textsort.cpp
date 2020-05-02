@@ -1,32 +1,41 @@
 #include <string>
 #include <iostream>
-#include <fstream>
-#include <sstream>
 #include <vector>
-#include <algorithm>
-#include <locale>
+#include "printer.h"
+#include "textchanger.h"
+#include "symbols.h"
+#include <set>
+#include "textsortfull.h" 
 
 using namespace std;
-void textsort(vector<string>& sentence, string &line)
+
+void textsortfull(vector<string>& sentence, string& line, string& x)
 {
-	sentence.resize(sentence.size() - 3);
-	int leng = sentence.size();
-	string tempter;
-	line = "";
-	
-	for (int i = 0; i < leng - 1; ++i)
-	{
-		for (int j = 0; j < leng - i - 1; ++j)
-		{
-			if (sentence[j] > sentence[j + 1])
-			{
-				tempter = sentence[j];
-				sentence[j] = sentence[j + 1];
-				sentence[j + 1] = tempter;
-			}
-		}
+	size_t pos = x.find("string");
+	bool str = false;
+	if (pos != string::npos) {
+		str = true;
 	}
-	for (int i = 0; i < sentence.size(); i++)
-		line += sentence[i] + "\n";
-//	printer(sentence);
+	if (str == true)
+	{
+		multiset<string>sorted;
+		for (vector<string>::iterator m = sentence.begin(); m != sentence.end(); ++m)
+			sorted.insert(*m);
+
+		vector<string>sentenced(sorted.begin(), sorted.end());
+		sorted.clear();
+		printer(sentenced, x);
+	}else
+		{
+			sentence.resize(sentence.size() - 2);
+			line = "";
+			multiset<string>filesort;
+			for (vector<string>::iterator p = sentence.begin(); p != sentence.end(); ++p)
+				filesort.insert(*p);
+
+			vector<string>sentence1(filesort.begin(), filesort.end());
+			filesort.clear();
+			for (int i = 0; i < sentence1.size(); i++)
+				line += sentence1[i] + "\n";
+		}
 }
