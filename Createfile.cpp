@@ -33,7 +33,7 @@ void CreateFile(string& x)
 		if (line.length())
 			buf += line + "\n";
 	}
-	cout << path; // первый скрытый юнит тест
+	//cout << path; // первый скрытый юнит тест
 	supereraser(buf, x);
 	output << buf;
 	input.close();
