@@ -22,7 +22,7 @@ void CreateFile(string& x)
 	cout << "Enter the path: "<<endl;
 	getline(cin, path);
 	ifstream input(path);
-	if (!input.is_open()) // второй,  не очень юнит тест, скрытый
+	if (!input.is_open()) // Check if file open
 	{
 		cout << "File can't be open!\n";
 		return;
@@ -33,7 +33,6 @@ void CreateFile(string& x)
 		if (line.length())
 			buf += line + "\n";
 	}
-	//cout << path; // первый скрытый юнит тест
 	supereraser(buf, x);
 	output << buf;
 	input.close();
