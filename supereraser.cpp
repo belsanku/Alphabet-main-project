@@ -9,18 +9,17 @@
 
 void supereraser(string& sentence, string& x)
 {
-	if (x == "sort -d string" || x == "sort -d file")
-	{
-		sentence.erase(remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash), sentence.end());
-		textchanger(sentence, x);
-	}
-	if (x == "sort -d -A string" || x == "sort -d -A file")
+	size_t pos = x.find("-A");
+	bool symb = false;
+	if (pos != string::npos)
+		symb = true;
+	if (symb == true)
 	{
 		symbols(sentence, x);
 		sentence.erase(remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash), sentence.end());
 		textchanger(sentence, x);
 	}
-	if (x == "sort string" || x == "sort file")
+	else
 	{
 		sentence.erase(remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash), sentence.end());
 		textchanger(sentence, x);
