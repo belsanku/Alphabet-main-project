@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/alexgttroll/alphabet-main-project/badge)](https://www.codefactor.io/repository/github/alexgttroll/alphabet-main-project)  
 
 ALPHABET/АЛФАВИТ
 ---
