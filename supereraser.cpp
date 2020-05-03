@@ -11,8 +11,7 @@ void supereraser(string& sentence, string& x)
 {
 	size_t pos = x.find("-A");
 	bool symb = false;
-	if (pos != string::npos)
-		symb = true;
+	if (pos != string::npos) symb = true;
 	if (symb == true)
 	{
 		symbols(sentence, x);
