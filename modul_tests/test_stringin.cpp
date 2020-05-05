@@ -6,8 +6,7 @@ using namespace std;
 
 void stringin(string& l)
 {
-    getline(cin, l);
-    
+    getline(cin, l);   
 }
 int main ()
 {
