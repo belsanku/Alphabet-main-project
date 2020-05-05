@@ -35,7 +35,21 @@ void textsortfull(vector<string>& sentence, string& line, string& x)
 
 			vector<string>sentence1(filesort.begin(), filesort.end());
 			filesort.clear();
-			for (int i = 0; i < sentence1.size(); i++)
-				line += sentence1[i] + "\n";
+			size_t rev = x.find("-r");
+			bool da = false;
+			if (rev != string::npos) 
+			{
+				da = true;
+			}
+			if (da == true) 
+			{
+				for (int i = sentence1.size()-1; i >= 0; --i)
+					line += sentence1[i] + "\n";
+			}
+			else
+			{
+				for (int i = 0; i < sentence1.size(); i++)
+					line += sentence1[i] + "\n";
+			}
 		}
 }
