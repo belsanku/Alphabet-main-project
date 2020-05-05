@@ -37,7 +37,6 @@ int main()
             x = "-r";
             printer(sentence1, x);
             t++;
-
         }
         cout<<endl << t << endl;
         if (t == 1)
