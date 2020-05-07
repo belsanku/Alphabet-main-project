@@ -30,7 +30,7 @@ int main()
 	string x, l;
 	assistant();
 	cout<<endl;
-	while (_kbhit() != KEY_ESC)
+	while (x != 'exit')
 	{
 		choose(l, x);
 	}
