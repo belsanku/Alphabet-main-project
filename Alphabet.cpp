@@ -28,8 +28,6 @@ int main()
 {
 	system("chcp 1251");
 	string x, l;
-	const int KEY_ESC = 27;
-	cout << "To exit, press ESC. For help, write 'help'" << endl;
 	assistant();
 	cout<<endl;
 	while (_kbhit() != KEY_ESC)
