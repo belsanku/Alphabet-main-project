@@ -30,7 +30,7 @@ int main()
 	string x, l;
 	assistant();
 	cout<<endl;
-	while (x != 'exit')
+	while (x != "exit")
 	{
 		choose(l, x);
 	}
