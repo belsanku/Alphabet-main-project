@@ -7,7 +7,6 @@
 #include <locale>
 #include <set>
 #include <ctype.h>
-#include <conio.h>
 #include "assistant.h"
 #include "parent.h"
 #include "textsort.h"
