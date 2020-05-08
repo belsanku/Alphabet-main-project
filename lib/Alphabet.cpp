@@ -7,7 +7,6 @@
 #include <locale>
 #include <set>
 #include <ctype.h>
-#include <conio.h>
 #include "printer.h"
 #include "textsortfull.h"
 #include "textsort.h"
