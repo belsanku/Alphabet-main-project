@@ -5,7 +5,6 @@
 #include <locale>
 #include <cctype>
 #include "symbols.h"
-#include <conio.h>
 
 using namespace std;
 
