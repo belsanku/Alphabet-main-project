@@ -1,2 +1,2 @@
 all:
-	g++ Alphabet.cpp assistant.cpp choose.cpp stringin.cpp CreateFile.cpp supereraser.cpp textchanger.cpp symbols.cpp parent.cpp textsort.cpp textsortfull.cpp printer.cpp -o Alphabet.out
+	g++ Alphabet.cpp lib/assistant.cpp lib/choose.cpp lib/stringin.cpp lib/Createfile.cpp lib/supereraser.cpp lib/textchanger.cpp lib/symbols.cpp lib/parent.cpp lib/textsort.cpp lib/textsortfull.cpp lib/printer.cpp -o Alphabet.out
