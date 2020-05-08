@@ -1,6 +1,5 @@
 #include <string>
 #include <iostream>
-#include <conio.h>
 #include "supereraser.h"
 #include "stringin.h"
 
