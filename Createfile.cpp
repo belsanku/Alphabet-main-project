@@ -22,7 +22,7 @@ void CreateFile(string& x)
 	cout << "Enter the path: "<<endl;
 	getline(cin, path);
 	ifstream input(path);
-	if (!input.is_open()) // âòîðîé,  íå î÷åíü þíèò òåñò, ñêðûòûé
+	if (!input.is_open()) // ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ°, Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ Ð»Ð¸ Ñ„Ð°Ð¹Ð»
 	{
 		cout << "File can't be open!\n";
 		return;
@@ -33,7 +33,7 @@ void CreateFile(string& x)
 		if (line.length())
 			buf += line + "\n";
 	}
-	//cout << path; // ïåðâûé ñêðûòûé þíèò òåñò
+	//cout << path; // Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ð¾Ð³Ð¾ Ð¿ÑƒÑ‚Ð¸
 	supereraser(buf, x);
 	output << buf;
 	input.close();
