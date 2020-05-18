@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/alexgttroll/alphabet-main-project/badge)](https://www.codefactor.io/repository/github/alexgttroll/alphabet-main-project)  
+[![CodeFactor](https://www.codefactor.io/repository/github/alexgttroll/alphabet-main-project/badge)](https://www.codefactor.io/repository/github/alexgttroll/alphabet-main-project) [![Build Status](https://travis-ci.org/AlexGtTroll/Alphabet-main-project.svg?branch=master)](https://travis-ci.org/AlexGtTroll/Alphabet-main-project)
 
 ALPHABET/АЛФАВИТ
 ---
