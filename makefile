@@ -50,7 +50,7 @@ $(DIR_SRC)/textchanger.o: lib/textchanger.cpp
 $(DIR_SRC)/textsort.o: lib/textsort.cpp
 	$(CC) $(CXXFLAGS) -I $(DIR_INCLUDE) -c lib/textsort.cpp -o $(DIR_SRC)/textsort.o
 
-$(DIR_SRC)/textsort.o: lib/textsortfull.cpp
+$(DIR_SRC)/textsortfull.o: lib/textsortfull.cpp
 	$(CC) $(CXXFLAGS) -I $(DIR_INCLUDE) -c lib/textsortfull.cpp -o $(DIR_SRC)/textsortfull.o
 
 # $(TESTS) : $(DIR_SRC)/CoordPrinter.o $(DIR_SRC)/function.o $(DIR_TEST)/test.o
