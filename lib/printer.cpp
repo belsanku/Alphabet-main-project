@@ -14,13 +14,13 @@ void printer(vector<string>& sentence1, string& x)
 		reverse = true;
 	if (reverse == true)
 	{
-		for (int i = sentence1.size()-1; i >= 0; --i)
+		for (unsigned int i = sentence1.size()-1; i >= 0; --i)
 		{
 			cout << sentence1[i] << endl;
 		}
 	}
 	else
-		for (int i = 0; i < sentence1.size(); ++i)
+		for (unsigned int i = 0; i < sentence1.size(); ++i)
 	{
 		cout << sentence1[i] << endl;
 	}

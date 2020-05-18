@@ -37,7 +37,7 @@ void textchanger(string& line, string& x)
 	}
 	string temp = develop.substr(prev);
 	cout << temp << endl;
-	for (int i = 0; i < sentence.size(); ++i)
+	for (unsigned int i = 0; i < sentence.size(); ++i)
 	{
 		if (sentence[i] == "")
 		{
@@ -51,7 +51,7 @@ void textchanger(string& line, string& x)
 	bool ded = false;
 	if (pos != string::npos)
 		ded = true;
-	if (ded == true) 
+	if (ded == true)
 	{
 		textsort(sentence, line, x);
 	}

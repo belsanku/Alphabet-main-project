@@ -37,7 +37,7 @@ void textsort(vector<string>& sentence, string& line, string& x)
 
 		vector<string>sentence1(nodubl.begin(), nodubl.end());
 
-		for (int i = 0; i < sentence1.size(); i++)
+		for (unsigned int i = 0; i < sentence1.size(); i++)
 			line += sentence1[i] + "\n";
 		nodubl.clear();
 	}
