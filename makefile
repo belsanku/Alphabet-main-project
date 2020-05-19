@@ -53,11 +53,10 @@ $(DIR_SRC)/textsortfull.o: lib/textsortfull.cpp
 	$(CC) $(CXXFLAGS) -I $(DIR_INCLUDE) -c lib/textsortfull.cpp -o $(DIR_SRC)/textsortfull.o
 
 $(TESTS) : $(DIR_TEST)/test.o
- 	$(CXX) $(CFLAG) $(LD_FLAGS) $(DIR_TEST)/test.o -o $(TESTS)
+	$(CXX) $(CFLAG) $(LD_FLAGS) $(DIR_TEST)/test.o -o $(TESTS)
 
 $(DIR_TEST)/test.o: test/test.cpp
- 	$(CXX) $(CFLAG) -I $(GTEST_D)/include -I src -c test/test.cpp -o $(DIR_TEST)/test.o
-
+	$(CXX) $(CFLAG) -I $(GTEST_D)/include -I lib -c test/test.cpp -o $(DIR_TEST)/test.o
 clean:
 	rm -rf $(DIR_SRC)/*.o 
 	rm -rf $(DIR_TEST)/*.o
