@@ -5,7 +5,8 @@
 
 using namespace std;
 
-void textchanger(string& line, vector<string>& sentence) {
+void textchanger(string& line, vector<string>& sentence) 
+{
     stringstream ss(line);
     string develop = "";
     while (!ss.eof()) {
