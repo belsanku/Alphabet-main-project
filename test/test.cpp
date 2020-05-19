@@ -1,15 +1,14 @@
 #include <gtest/gtest.h>
 #include <iostream>
+#include <map>
+#include <set>
+#include <sstream>
 #include <string>
 #include <vector>
-#include <set>
-#include <map>
-#include <sstream>
 
 using namespace std;
 
-
-void textchanger(string& line, vector<string>& sentence) 
+void textchanger(string& line, vector<string>& sentence)
 {
     stringstream ss(line);
     string develop = "";
@@ -39,7 +38,7 @@ void textchanger(string& line, vector<string>& sentence)
     cout << endl;
 }
 
-void textchanger(string& line, int& check) 
+void textchanger(string& line, int& check)
 {
     stringstream ss(line);
     string develop = "";
@@ -68,14 +67,15 @@ void textchanger(string& line, int& check)
     }
     sentence.push_back(develop.substr(prev));
     cout << endl;
-    if (sentence[0] == "shady" && sentence[1] == "please" && sentence[2] == "stand"
-    	&& sentence[3] == "up");
+    if (sentence[0] == "shady" && sentence[1] == "please"
+        && sentence[2] == "stand" && sentence[3] == "up")
+        ;
     {
-    	check = 1;
+        check = 1;
     }
 }
 
-bool IsParenthesesOrDash(char c) 
+bool IsParenthesesOrDash(char c)
 {
     switch (c) {
     case '(':
@@ -113,26 +113,28 @@ bool IsParenthesesOrDash(char c)
     }
 }
 
-void supereraser(string& sentence, int& check) 
+void supereraser(string& sentence, int& check)
 {
     sentence.erase(
-            remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash),
-            sentence.end());
+        remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash),
+        sentence.end());
     check = 1;
 }
 
-void choose(string& x, int& check) 
+void choose(string& x, int& check)
 {
     if (x == "help") {
         check = 1;
-    } else {
+    }
+    else {
         size_t pos = x.find("string");
         bool str = false;
         if (pos != string::npos)
             str = true;
         if (str == true) {
             check = 2;
-        } else {
+        }
+        else {
             pos = x.find("file");
             bool file = false;
             if (pos != string::npos)
@@ -145,80 +147,78 @@ void choose(string& x, int& check)
     cout << endl;
 }
 
-void assistant(int& check) 
+void assistant(int& check)
 {
     cout << "The program for sorting text works as follows:" << endl
-         << "-d  --  sorting without repetition" << endl;
+        << "-d  --  sorting without repetition" << endl;
     cout << "-A -- case-sensitive text sorting. Uppercase letters are changed "
-            "to "
-            "lowercase."
-         << endl;
+        "to "
+        "lowercase."
+        << endl;
     cout << "-r -- conclusion from the end. Write to file from the end."
-         << endl;
+        << endl;
     cout << "Parameters can be written in any order, example: -d -A -r, -r -A, "
-            "-A -d;"
-         << endl;
+        "-A -d;"
+        << endl;
     cout << "|| If none of the parameters is specified, then normal sorting "
-            "will "
-            "occur ||"
-         << endl;
+        "will "
+        "occur ||"
+        << endl;
     cout << "If you are working with a .txt file containing Russian letters, "
-            "you "
-            "must change the file encoding to ANSI"
-         << endl;
+        "you "
+        "must change the file encoding to ANSI"
+        << endl;
     cout << "Otherwise, at the exit you will receive an ancient elven language"
-         << endl;
+        << endl;
     cout << "After you have specified the parameter, write what the program "
-            "should work with"
-         << endl;
+        "should work with"
+        << endl;
     cout << "Example: -d -A string - work with string. -d -A file - work with "
-            "file"
-         << endl;
+        "file"
+        << endl;
     check = 1;
 }
 
-void textsort(vector<string>& sentence, int &check) 
+void textsort(vector<string>& sentence, int& check)
 {
     set<string> nodubls;
     for (vector<string>::iterator m = sentence.begin(); m != sentence.end();
-         ++m)
+        ++m)
         nodubls.insert(*m);
 
-   vector<string> sentenced(nodubls.begin(), nodubls.end());
-    if (sentenced[0] == "is" && sentenced[1] == "my" && sentenced[2]
-    	== "name" && sentenced[3] =="please" && sentenced[4] ==
-    	"shady"){
-
-    	check = 1;
+    vector<string> sentenced(nodubls.begin(), nodubls.end());
+    if (sentenced[0] == "is" && sentenced[1] == "my" && sentenced[2] == "name"
+        && sentenced[3] == "please" && sentenced[4] == "shady") {
+        check = 1;
     }
     nodubls.clear();
 }
 
-void textsortfull(vector<string>& sentence, int& check) {
+void textsortfull(vector<string>& sentence, int& check)
+{
     multiset<string> sorted;
     for (vector<string>::iterator m = sentence.begin(); m != sentence.end();
-         ++m)
+        ++m)
         sorted.insert(*m);
 
     vector<string> sentenced(sorted.begin(), sorted.end());
-     if (sentenced[0] == "is" && sentenced[1] == "is" && sentenced[2]
-    	== "my" && sentenced[3] =="my" && sentenced[4] ==
-    	"name" && sentenced[5] == "name" && sentenced[6] ==
-    	"shady" && sentenced[7] == "slim"){
-
-    	check = 1;
+    if (sentenced[0] == "is" && sentenced[1] == "is" && sentenced[2] == "my"
+        && sentenced[3] == "my" && sentenced[4] == "name"
+        && sentenced[5] == "name" && sentenced[6] == "shady"
+        && sentenced[7] == "slim") {
+        check = 1;
     }
     sorted.clear();
 }
 
-TEST(ASSISTANT, function_working) 
+TEST(ASSISTANT, function_working)
 {
     int check = 0;
     assistant(check);
     ASSERT_EQ(1, check); /// if assistant working
 }
 
-TEST(CHOOSE, right_working) 
+TEST(CHOOSE, right_working)
 {
     int check = 0;
 
@@ -243,7 +243,7 @@ TEST(CHOOSE, right_working)
     ASSERT_EQ(0, check); //// if help found
 }
 
-TEST(DELETE, symbols_delete) 
+TEST(DELETE, symbols_delete)
 {
     int check = 0;
     string sentence1, sentence2;
@@ -253,42 +253,41 @@ TEST(DELETE, symbols_delete)
 
     ASSERT_EQ(1, check); ////if supereraser fulfilled
 
-    if (sentence1 == sentence2)
-    {
-    	check = 2;
+    if (sentence1 == sentence2) {
+        check = 2;
     }
-  	ASSERT_EQ(2, check);
+    ASSERT_EQ(2, check);
     sentence1 = "";
-    sentence2= "";
+    sentence2 = "";
 }
 
-TEST(TEXTCHANGER, string_to_vector) 
+TEST(TEXTCHANGER, string_to_vector)
 {
-	int check=0;
+    int check = 0;
     string line = "shady please stand up";
     vector<string> sentence;
     textchanger(line, check);
-	ASSERT_EQ(1, check);
+    ASSERT_EQ(1, check);
     sentence.clear();
     line = "";
 }
 
-TEST(SORTING, dedubl_sort_tester) 
+TEST(SORTING, dedubl_sort_tester)
 {
     vector<string> sentence
-            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
+        = { "my", "name", "is", "slim", "shady", "name", "is", "my" };
     vector<string> sentenced;
-    int check =0;
+    int check = 0;
     textsort(sentence, check);
     ASSERT_EQ(1, check);
 }
 
-TEST(SORTINGFULL, sortfull_tester) 
+TEST(SORTINGFULL, sortfull_tester)
 {
-	int check = 0;
+    int check = 0;
     vector<string> sentence
-            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
+        = { "my", "name", "is", "slim", "shady", "name", "is", "my" };
     vector<string> sentenced;
     textsortfull(sentence, check);
-     ASSERT_EQ(1, check);
+    ASSERT_EQ(1, check);
 }
