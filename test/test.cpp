@@ -221,6 +221,7 @@ TEST(CHOOSE, right_working)
     choose(x, check);
     ASSERT_EQ(0, check); //// if help found
 }
+<<<<<<< HEAD
 
 TEST(DELETE, symbols_delete) 
 {
@@ -280,3 +281,65 @@ TEST(SORTINGFULL, sortfull_tester)
     EXPECT_THAT(sentenced[6],"shady");
     EXPECT_THAT(sentenced[7],"slim");
 }
+||||||| 0c4166d
+
+TEST(DELETE, symbols_delete) 
+{
+    int check = 0;
+    string sentence;
+    sentence = "m&y n$am#e is#( zh))ora";
+    supereraser(sentence, check);
+
+    ASSERT_EQ(1, check); ////if supereraser fulfilled
+
+    ASSERT_STREQ("my name is zhora", sentence); ///// if supereraser works fine
+    sentence = "my name is zhora";
+    ASSERT_STREQ("my name is zhora", sentence);
+
+    sentence = "";
+}
+
+TEST(TEXTCHANGER, string_to_vector) 
+{
+    string line = "shady please stand up";
+    vector<string> sentence;
+    textchanger(line, sentence);
+    ASSERT_STREQ("shady ", sentence[0]);
+    ASSERT_STREQ("please ", sentence[1]);
+    ASSERT_STREQ("stand ", sentence[2]);
+    ASSERT_STREQ("up ", sentence[3]);
+
+    clear.sentence();
+    line = "";
+}
+
+TEST(SORTING, dedubl_sort_tester) 
+{
+    vector<string> sentence
+            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
+    vector<string> sentenced;
+    textsort(sentence, sentenced);
+    ASSERT_STREQ("is", sentenced[0]);
+    ASSERT_STREQ("my", sentenced[1]);
+    ASSERT_STREQ("name", sentenced[2]);
+    ASSERT_STREQ("please", sentenced[3]);
+    ASSERT_STREQ("shady", sentenced[4]);
+}
+
+TEST(SORTINGFULL, sortfull_tester) 
+{
+    vector<string> sentence
+            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
+    vector<string> sentenced;
+    textsortfull(sentence, sentenced);
+    ASSERT_STREQ("is", sentenced[0]);
+    ASSERT_STREQ("is", sentenced[1]);
+    ASSERT_STREQ("my", sentenced[2]);
+    ASSERT_STREQ("my", sentenced[3]);
+    ASSERT_STREQ("name", sentenced[4]);
+    ASSERT_STREQ("name", sentenced[5]);
+    ASSERT_STREQ("shady", sentenced[6]);
+    ASSERT_STREQ("slim", sentenced[7]);
+}
+=======
+>>>>>>> 4d3877f3a2bc319da992444c85044adfea6a823c
