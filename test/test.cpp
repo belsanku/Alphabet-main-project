@@ -248,7 +248,7 @@ TEST(TEXTCHANGER, string_to_vector)
     ASSERT_STREQ("stand ", sentence[2]);
     ASSERT_STREQ("up ", sentence[3]);
 
-    clear.sentence();
+    sentence.clear();
     line = "";
 }
 
