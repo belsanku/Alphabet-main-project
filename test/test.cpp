@@ -36,7 +36,6 @@ void textchanger(string& line, vector<string>& sentence)
     cout << endl;
 }
 
-/////////////////////////////////////////////////////////////////////////////////
 void textchanger(string& line, string& x) 
 {
     stringstream ss(line);
@@ -67,7 +66,7 @@ void textchanger(string& line, string& x)
     sentence.push_back(develop.substr(prev));
     cout << endl;
 }
-/////////////////////////////////////////////////////////////////////////
+
 bool IsParenthesesOrDash(char c) 
 {
     switch (c) {
@@ -106,7 +105,6 @@ bool IsParenthesesOrDash(char c)
     }
 }
 
-//////////////////////////////////////////////////////////////
 void supereraser(string& sentence, int& check) 
 {
     sentence.erase(
@@ -114,7 +112,7 @@ void supereraser(string& sentence, int& check)
             sentence.end());
     check = 1;
 }
-////////////////////////////////////////////////////////////////
+
 void choose(string& x, int& check) 
 {
     if (x == "help") {
@@ -138,7 +136,7 @@ void choose(string& x, int& check)
     }
     cout << endl;
 }
-////////////////////////////////////////////////////////////////////////////////
+
 void assistant(int& check) 
 {
     cout << "The program for sorting text works as follows:" << endl
@@ -170,7 +168,7 @@ void assistant(int& check)
          << endl;
     check = 1;
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////
+
 void textsort(vector<string>& sentence, vector<string>& sentenced) 
 {
     set<string> nodubls;
@@ -181,7 +179,6 @@ void textsort(vector<string>& sentence, vector<string>& sentenced)
     vector<string> sentenced(nodubls.begin(), nodubls.end());
     nodubls.clear();
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////
 
 void textsortfull(vector<string>& sentence, vector<string>& sentenced) {
     multiset<string> sorted;
@@ -192,7 +189,7 @@ void textsortfull(vector<string>& sentence, vector<string>& sentenced) {
     vector<string> sentenced(sorted.begin(), sorted.end());
     sorted.clear();
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 TEST(ASSISTANT, function_working) 
 {
     int check = 0;
