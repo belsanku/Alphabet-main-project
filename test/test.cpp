@@ -172,24 +172,37 @@ void assistant(int& check)
     check = 1;
 }
 
-void textsort(vector<string>& sentence, vector<string>& sentenced) 
+void textsort(vector<string>& sentence, int &check) 
 {
     set<string> nodubls;
     for (vector<string>::iterator m = sentence.begin(); m != sentence.end();
          ++m)
         nodubls.insert(*m);
 
-    vector<string> sentenced(nodubls.begin(), nodubls.end());
+   vector<string> sentenced(nodubls.begin(), nodubls.end());
+    if (sentenced[0] == "is" && sentenced[1] == "my" && sentenced[2]
+    	== "name" && sentenced[3] =="please" && sentenced[4] ==
+    	"shady"){
+
+    	check = 1;
+    }
     nodubls.clear();
 }
 
-void textsortfull(vector<string>& sentence, vector<string>& sentenced) {
+void textsortfull(vector<string>& sentence, int& check) {
     multiset<string> sorted;
     for (vector<string>::iterator m = sentence.begin(); m != sentence.end();
          ++m)
         sorted.insert(*m);
 
     vector<string> sentenced(sorted.begin(), sorted.end());
+     if (sentenced[0] == "is" && sentenced[1] == "is" && sentenced[2]
+    	== "my" && sentenced[3] =="my" && sentenced[4] ==
+    	"name" && sentenced[5] == "name" && sentenced[6] ==
+    	"shady" && sentenced[7] == "slim"){
+
+    	check = 1;
+    }
     sorted.clear();
 }
 
@@ -224,7 +237,6 @@ TEST(CHOOSE, right_working)
     choose(x, check);
     ASSERT_EQ(0, check); //// if help found
 }
-<<<<<<< HEAD
 
 TEST(DELETE, symbols_delete) 
 {
@@ -261,12 +273,9 @@ TEST(SORTING, dedubl_sort_tester)
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
-    textsort(sentence, sentenced);
-    EXPECT_THAT(sentenced[0], "is");
-    EXPECT_THAT(sentenced[1], "my");
-    EXPECT_THAT(sentenced[2], "name");
-    EXPECT_THAT(sentenced[3], "please");
-    EXPECT_THAT(sentenced[4], "shady");
+    int check =0;
+    textsort(sentence, check);
+    ASSERT_EQ(1, check);
 }
 
 TEST(SORTINGFULL, sortfull_tester) 
@@ -274,75 +283,6 @@ TEST(SORTINGFULL, sortfull_tester)
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
-    textsortfull(sentence, sentenced);
-    EXPECT_THAT(sentenced[0],"is");
-    EXPECT_THAT(sentenced[1],"is");
-    EXPECT_THAT(sentenced[2],"my");
-    EXPECT_THAT(sentenced[3],"my");
-    EXPECT_THAT(sentenced[4],"name");
-    EXPECT_THAT(sentenced[5],"name");
-    EXPECT_THAT(sentenced[6],"shady");
-    EXPECT_THAT(sentenced[7],"slim");
+    textsortfull(sentence, check);
+     ASSERT_EQ(1, check);
 }
-||||||| 0c4166d
-
-TEST(DELETE, symbols_delete) 
-{
-    int check = 0;
-    string sentence;
-    sentence = "m&y n$am#e is#( zh))ora";
-    supereraser(sentence, check);
-
-    ASSERT_EQ(1, check); ////if supereraser fulfilled
-
-    ASSERT_STREQ("my name is zhora", sentence); ///// if supereraser works fine
-    sentence = "my name is zhora";
-    ASSERT_STREQ("my name is zhora", sentence);
-
-    sentence = "";
-}
-
-TEST(TEXTCHANGER, string_to_vector) 
-{
-    string line = "shady please stand up";
-    vector<string> sentence;
-    textchanger(line, sentence);
-    ASSERT_STREQ("shady ", sentence[0]);
-    ASSERT_STREQ("please ", sentence[1]);
-    ASSERT_STREQ("stand ", sentence[2]);
-    ASSERT_STREQ("up ", sentence[3]);
-
-    clear.sentence();
-    line = "";
-}
-
-TEST(SORTING, dedubl_sort_tester) 
-{
-    vector<string> sentence
-            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
-    vector<string> sentenced;
-    textsort(sentence, sentenced);
-    ASSERT_STREQ("is", sentenced[0]);
-    ASSERT_STREQ("my", sentenced[1]);
-    ASSERT_STREQ("name", sentenced[2]);
-    ASSERT_STREQ("please", sentenced[3]);
-    ASSERT_STREQ("shady", sentenced[4]);
-}
-
-TEST(SORTINGFULL, sortfull_tester) 
-{
-    vector<string> sentence
-            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
-    vector<string> sentenced;
-    textsortfull(sentence, sentenced);
-    ASSERT_STREQ("is", sentenced[0]);
-    ASSERT_STREQ("is", sentenced[1]);
-    ASSERT_STREQ("my", sentenced[2]);
-    ASSERT_STREQ("my", sentenced[3]);
-    ASSERT_STREQ("name", sentenced[4]);
-    ASSERT_STREQ("name", sentenced[5]);
-    ASSERT_STREQ("shady", sentenced[6]);
-    ASSERT_STREQ("slim", sentenced[7]);
-}
-=======
->>>>>>> 4d3877f3a2bc319da992444c85044adfea6a823c
