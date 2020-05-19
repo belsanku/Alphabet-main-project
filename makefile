@@ -11,8 +11,7 @@ LD_FLAGS = -L $(GTEST_D)/lib -lgtest_main -lpthread
 CFLAG += -isystem $(GTEST_D)/include
 CXX += -g -Wall -Wextra -pthread -std=c++17
 
-all: $(EXE) 
-# 	$(TESTS)
+all: $(EXE)	$(TESTS)
 
 $(EXE): $(DIR_SRC)/Alphabet.o $(DIR_SRC)/assistant.o $(DIR_SRC)/choose.o $(DIR_SRC)/Createfile.o $(DIR_SRC)/parent.o $(DIR_SRC)/printer.o $(DIR_SRC)/stringin.o $(DIR_SRC)/supereraser.o $(DIR_SRC)/symbols.o $(DIR_SRC)/textchanger.o $(DIR_SRC)/textsort.o $(DIR_SRC)/textsortfull.o
 	$(CC) $(CXXFLAGS) $(DIR_SRC)/Alphabet.o $(DIR_SRC)/assistant.o $(DIR_SRC)/choose.o $(DIR_SRC)/Createfile.o $(DIR_SRC)/parent.o $(DIR_SRC)/printer.o $(DIR_SRC)/stringin.o $(DIR_SRC)/supereraser.o $(DIR_SRC)/symbols.o $(DIR_SRC)/textchanger.o $(DIR_SRC)/textsort.o $(DIR_SRC)/textsortfull.o -o $(EXE)
@@ -53,12 +52,11 @@ $(DIR_SRC)/textsort.o: lib/textsort.cpp
 $(DIR_SRC)/textsortfull.o: lib/textsortfull.cpp
 	$(CC) $(CXXFLAGS) -I $(DIR_INCLUDE) -c lib/textsortfull.cpp -o $(DIR_SRC)/textsortfull.o
 
-# $(TESTS) : $(DIR_SRC)/CoordPrinter.o $(DIR_SRC)/function.o $(DIR_TEST)/test.o
-# 	$(CXX) $(CFLAG) $(LD_FLAGS) $(DIR_SRC)/CoordPrinter.o $(DIR_SRC)/function.o  $(DIR_TEST)/test.o -o $(TESTS)
+$(TESTS) : $(DIR_TEST)/test.o
+ 	$(CXX) $(CFLAG) $(LD_FLAGS) $(DIR_TEST)/test.o -o $(TESTS)
 
-# $(DIR_TEST)/test.o: test/test.cpp
-# 	$(CXX) $(CFLAG) -I $(GTEST_D)/include -I src -c test/test.cpp -o $(DIR_TEST)/test.o
-	
+$(DIR_TEST)/test.o: test/test.cpp
+ 	$(CXX) $(CFLAG) -I $(GTEST_D)/include -I src -c test/test.cpp -o $(DIR_TEST)/test.o
 
 clean:
 	rm -rf $(DIR_SRC)/*.o 
