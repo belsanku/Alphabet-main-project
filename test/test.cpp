@@ -187,8 +187,8 @@ void textsort(vector<string>& sentence, int& check)
         nodubls.insert(*m);
 
     vector<string> sentenced(nodubls.begin(), nodubls.end());
-    if (sentenced[0] == "is" && sentenced[1] == "my" && sentenced[2] == "name"
-        && sentenced[3] == "please" && sentenced[4] == "shady") {
+    if (sentenced[0] == "is " && sentenced[1] == "my " && sentenced[2] == "name "
+        && sentenced[3] == "please " && sentenced[4] == "shady") {
         check = 1;
     }
     nodubls.clear();
@@ -203,7 +203,7 @@ void textsortfull(vector<string>& sentence, int& check)
 
     vector<string> sentenced(sorted.begin(), sorted.end());
     if (sentenced[0] == "is" && sentenced[1] == "is" && sentenced[2] == "my"
-        && sentenced[3] == "my" && sentenced[4] == "name"
+        && sentenced[3] == "my" && sentenced[4] == "name "
         && sentenced[5] == "name" && sentenced[6] == "shady"
         && sentenced[7] == "slim") {
         check = 1;
@@ -268,7 +268,6 @@ TEST(SORTING, dedubl_sort_tester)
 {
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
-    vector<string> sentenced;
     int check = 0;
     textsort(sentence, check);
     ASSERT_EQ(1, check);
@@ -279,7 +278,6 @@ TEST(SORTINGFULL, sortfull_tester)
     int check = 0;
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
-    vector<string> sentenced;
     textsortfull(sentence, check);
     ASSERT_EQ(1, check);
 }
