@@ -187,8 +187,9 @@ void textsort(vector<string>& sentence, int& check)
         nodubls.insert(*m);
 
     vector<string> sentenced(nodubls.begin(), nodubls.end());
-    if (sentenced[0] == "is " && sentenced[1] == "my " && sentenced[2] == "name "
-        && sentenced[3] == "please " && sentenced[4] == "shady") {
+    if (sentenced[0] == "is" && sentenced[1] == "my" 
+        && sentenced[2] == "name" && sentenced[3] == "please" 
+        && sentenced[4] == "shady") {
         check = 1;
     }
     nodubls.clear();
