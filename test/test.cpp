@@ -116,8 +116,8 @@ bool IsParenthesesOrDash(char c)
 void supereraser(string& sentence, int& check)
 {
     sentence.erase(
-        remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash),
-        sentence.end());
+            remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash),
+            sentence.end());
     check = 1;
 }
 
@@ -125,16 +125,14 @@ void choose(string& x, int& check)
 {
     if (x == "help") {
         check = 1;
-    }
-    else {
+    } else {
         size_t pos = x.find("string");
         bool str = false;
         if (pos != string::npos)
             str = true;
         if (str == true) {
             check = 2;
-        }
-        else {
+        } else {
             pos = x.find("file");
             bool file = false;
             if (pos != string::npos)
@@ -150,32 +148,32 @@ void choose(string& x, int& check)
 void assistant(int& check)
 {
     cout << "The program for sorting text works as follows:" << endl
-        << "-d  --  sorting without repetition" << endl;
+         << "-d  --  sorting without repetition" << endl;
     cout << "-A -- case-sensitive text sorting. Uppercase letters are changed "
-        "to "
-        "lowercase."
-        << endl;
+            "to "
+            "lowercase."
+         << endl;
     cout << "-r -- conclusion from the end. Write to file from the end."
-        << endl;
+         << endl;
     cout << "Parameters can be written in any order, example: -d -A -r, -r -A, "
-        "-A -d;"
-        << endl;
+            "-A -d;"
+         << endl;
     cout << "|| If none of the parameters is specified, then normal sorting "
-        "will "
-        "occur ||"
-        << endl;
+            "will "
+            "occur ||"
+         << endl;
     cout << "If you are working with a .txt file containing Russian letters, "
-        "you "
-        "must change the file encoding to ANSI"
-        << endl;
+            "you "
+            "must change the file encoding to ANSI"
+         << endl;
     cout << "Otherwise, at the exit you will receive an ancient elven language"
-        << endl;
+         << endl;
     cout << "After you have specified the parameter, write what the program "
-        "should work with"
-        << endl;
+            "should work with"
+         << endl;
     cout << "Example: -d -A string - work with string. -d -A file - work with "
-        "file"
-        << endl;
+            "file"
+         << endl;
     check = 1;
 }
 
@@ -183,7 +181,7 @@ void textsort(vector<string>& sentence, int& check)
 {
     set<string> nodubls;
     for (vector<string>::iterator m = sentence.begin(); m != sentence.end();
-        ++m)
+         ++m)
         nodubls.insert(*m);
 
     vector<string> sentenced(nodubls.begin(), nodubls.end());
@@ -198,7 +196,7 @@ void textsortfull(vector<string>& sentence, int& check)
 {
     multiset<string> sorted;
     for (vector<string>::iterator m = sentence.begin(); m != sentence.end();
-        ++m)
+         ++m)
         sorted.insert(*m);
 
     vector<string> sentenced(sorted.begin(), sorted.end());
@@ -275,7 +273,7 @@ TEST(TEXTCHANGER, string_to_vector)
 TEST(SORTING, dedubl_sort_tester)
 {
     vector<string> sentence
-        = { "my", "name", "is", "slim", "shady", "name", "is", "my" };
+            = { "my", "name", "is", "slim", "shady", "name", "is", "my" };
     vector<string> sentenced;
     int check = 0;
     textsort(sentence, check);
@@ -286,7 +284,7 @@ TEST(SORTINGFULL, sortfull_tester)
 {
     int check = 0;
     vector<string> sentence
-        = { "my", "name", "is", "slim", "shady", "name", "is", "my" };
+            = { "my", "name", "is", "slim", "shady", "name", "is", "my" };
     vector<string> sentenced;
     textsortfull(sentence, check);
     ASSERT_EQ(1, check);
