@@ -273,7 +273,7 @@ TEST(TEXTCHANGER, string_to_vector)
 TEST(SORTING, dedubl_sort_tester)
 {
     vector<string> sentence
-            = {"my", "name", "is", "slim", "shady", "name", "is", "my" };
+            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
     int check = 0;
     textsort(sentence, check);
@@ -284,7 +284,7 @@ TEST(SORTINGFULL, sortfull_tester)
 {
     int check = 0;
     vector<string> sentence
-            = {"my", "name", "is", "slim", "shady", "name", "is", "my" };
+            = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
     textsortfull(sentence, check);
     ASSERT_EQ(1, check);
