@@ -231,9 +231,9 @@ TEST(DELETE, symbols_delete)
 
     ASSERT_EQ(1, check); ////if supereraser fulfilled
 
-    ASSERT_STREQ("my name is zhora", sentence); ///// if supereraser works fine
+    EXPECT_THAT(sentence, "my name is zhora"); ///// if supereraser works fine
     sentence = "my name is zhora";
-    ASSERT_STREQ("my name is zhora", sentence);
+    EXPECT_THAT(sentence, "my name is zhora");
 
     sentence = "";
 }
@@ -243,10 +243,10 @@ TEST(TEXTCHANGER, string_to_vector)
     string line = "shady please stand up";
     vector<string> sentence;
     textchanger(line, sentence);
-    ASSERT_STREQ("shady ", sentence[0]);
-    ASSERT_STREQ("please ", sentence[1]);
-    ASSERT_STREQ("stand ", sentence[2]);
-    ASSERT_STREQ("up ", sentence[3]);
+    EXPECT_THAT(sentence[0], "shady ");
+    EXPECT_THAT(sentence[1],  "please ");
+    EXPECT_THAT(sentence[2], "stand ");
+    EXPECT_THAT(sentence[3], "up ");
 
     clear.sentence();
     line = "";
@@ -258,11 +258,11 @@ TEST(SORTING, dedubl_sort_tester)
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
     textsort(sentence, sentenced);
-    ASSERT_STREQ("is", sentenced[0]);
-    ASSERT_STREQ("my", sentenced[1]);
-    ASSERT_STREQ("name", sentenced[2]);
-    ASSERT_STREQ("please", sentenced[3]);
-    ASSERT_STREQ("shady", sentenced[4]);
+    EXPECT_THAT(sentenced[0], "is");
+    EXPECT_THAT(sentenced[1], "my");
+    EXPECT_THAT(sentenced[2], "name");
+    EXPECT_THAT(sentenced[3], "please");
+    EXPECT_THAT(sentenced[4], "shady");
 }
 
 TEST(SORTINGFULL, sortfull_tester) 
@@ -271,12 +271,12 @@ TEST(SORTINGFULL, sortfull_tester)
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
     textsortfull(sentence, sentenced);
-    ASSERT_STREQ("is", sentenced[0]);
-    ASSERT_STREQ("is", sentenced[1]);
-    ASSERT_STREQ("my", sentenced[2]);
-    ASSERT_STREQ("my", sentenced[3]);
-    ASSERT_STREQ("name", sentenced[4]);
-    ASSERT_STREQ("name", sentenced[5]);
-    ASSERT_STREQ("shady", sentenced[6]);
-    ASSERT_STREQ("slim", sentenced[7]);
+    EXPECT_THAT(sentenced[0],"is");
+    EXPECT_THAT(sentenced[1],"is");
+    EXPECT_THAT(sentenced[2],"my");
+    EXPECT_THAT(sentenced[3],"my");
+    EXPECT_THAT(sentenced[4],"name");
+    EXPECT_THAT(sentenced[5],"name");
+    EXPECT_THAT(sentenced[6],"shady");
+    EXPECT_THAT(sentenced[7],"slim");
 }
