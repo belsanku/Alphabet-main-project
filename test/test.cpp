@@ -221,19 +221,3 @@ TEST(CHOOSE, right_working)
     choose(x, check);
     ASSERT_EQ(0, check); //// if help found
 }
-
-TEST(DELETE, symbols_delete) 
-{
-    int check = 0;
-    string sentence;
-    sentence = "m&y n$am#e is#( zh))ora";
-    supereraser(sentence, check);
-
-    ASSERT_EQ(1, check); ////if supereraser fulfilled
-
-    ASSERT_STREQ("my name is zhora", sentence); ///// if supereraser works fine
-    sentence = "my name is zhora";
-    ASSERT_STREQ("my name is zhora", sentence);
-
-    sentence = "";
-}
