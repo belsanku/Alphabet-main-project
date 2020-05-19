@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 void textchanger(string& line, vector<string>& sentence) 
 {
     stringstream ss(line);
@@ -36,7 +37,8 @@ void textchanger(string& line, vector<string>& sentence)
 }
 
 /////////////////////////////////////////////////////////////////////////////////
-void textchanger(string& line, string& x) {
+void textchanger(string& line, string& x) 
+{
     stringstream ss(line);
     string develop = "";
     vector<string> sentence;
@@ -66,7 +68,8 @@ void textchanger(string& line, string& x) {
     cout << endl;
 }
 /////////////////////////////////////////////////////////////////////////
-bool IsParenthesesOrDash(char c) {
+bool IsParenthesesOrDash(char c) 
+{
     switch (c) {
     case '(':
     case ')':
@@ -104,14 +107,16 @@ bool IsParenthesesOrDash(char c) {
 }
 
 //////////////////////////////////////////////////////////////
-void supereraser(string& sentence, int& check) {
+void supereraser(string& sentence, int& check) 
+{
     sentence.erase(
             remove_if(sentence.begin(), sentence.end(), &IsParenthesesOrDash),
             sentence.end());
     check = 1;
 }
 ////////////////////////////////////////////////////////////////
-void choose(string& x, int& check) {
+void choose(string& x, int& check) 
+{
     if (x == "help") {
         check = 1;
     } else {
@@ -134,7 +139,8 @@ void choose(string& x, int& check) {
     cout << endl;
 }
 ////////////////////////////////////////////////////////////////////////////////
-void assistant(int& check) {
+void assistant(int& check) 
+{
     cout << "The program for sorting text works as follows:" << endl
          << "-d  --  sorting without repetition" << endl;
     cout << "-A -- case-sensitive text sorting. Uppercase letters are changed "
@@ -165,7 +171,8 @@ void assistant(int& check) {
     check = 1;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////
-void textsort(vector<string>& sentence, vector<string>& sentenced) {
+void textsort(vector<string>& sentence, vector<string>& sentenced) 
+{
     set<string> nodubls;
     for (vector<string>::iterator m = sentence.begin(); m != sentence.end();
          ++m)
@@ -186,13 +193,15 @@ void textsortfull(vector<string>& sentence, vector<string>& sentenced) {
     sorted.clear();
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-TEST(ASSISTANT, function_working) {
+TEST(ASSISTANT, function_working) 
+{
     int check = 0;
     assistant(check);
     ASSERT_EQ(1, check); /// if assistant working
 }
 
-TEST(CHOOSE, right_working) {
+TEST(CHOOSE, right_working) 
+{
     int check = 0;
 
     string x = "help";
@@ -216,7 +225,8 @@ TEST(CHOOSE, right_working) {
     ASSERT_EQ(0, check); //// if help found
 }
 
-TEST(DELETE, symbols_delete) {
+TEST(DELETE, symbols_delete) 
+{
     int check = 0;
     string sentence;
     sentence = "m&y n$am#e is#( zh))ora";
@@ -231,7 +241,8 @@ TEST(DELETE, symbols_delete) {
     sentence = "";
 }
 
-TEST(TEXTCHANGER, string_to_vector) {
+TEST(TEXTCHANGER, string_to_vector) 
+{
     string line = "shady please stand up";
     vector<string> sentence;
     textchanger(line, sentence);
@@ -244,7 +255,8 @@ TEST(TEXTCHANGER, string_to_vector) {
     line = "";
 }
 
-TEST(SORTING, dedubl_sort_tester) {
+TEST(SORTING, dedubl_sort_tester) 
+{
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
@@ -256,7 +268,8 @@ TEST(SORTING, dedubl_sort_tester) {
     ASSERT_STREQ("shady", sentenced[4]);
 }
 
-TEST(SORTINGFULL, sortfull_tester) {
+TEST(SORTINGFULL, sortfull_tester) 
+{
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
