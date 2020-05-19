@@ -39,7 +39,7 @@ void textchanger(string& line, vector<string>& sentence)
     cout << endl;
 }
 
-void textchanger(string& line, string& x) 
+void textchanger(string& line, int& check) 
 {
     stringstream ss(line);
     string develop = "";
@@ -68,6 +68,11 @@ void textchanger(string& line, string& x)
     }
     sentence.push_back(develop.substr(prev));
     cout << endl;
+    if (sentence[0] == "shady" && sentence[1] == "please" && sentence[2] == "stand"
+    	&& sentence[3] == "up");
+    {
+    	check = 1;
+    }
 }
 
 bool IsParenthesesOrDash(char c) 
@@ -241,30 +246,29 @@ TEST(CHOOSE, right_working)
 TEST(DELETE, symbols_delete) 
 {
     int check = 0;
-    string sentence;
-    sentence = "m&y n$am#e is#( zh))ora";
-    supereraser(sentence, check);
+    string sentence1, sentence2;
+    sentence2 = "my name is zhora";
+    sentence1 = "m&y n$am#e is#( zh))ora";
+    supereraser(sentence1, check);
 
     ASSERT_EQ(1, check); ////if supereraser fulfilled
 
-    EXPECT_THAT(sentence, "my name is zhora"); ///// if supereraser works fine
-    sentence = "my name is zhora";
-    EXPECT_THAT(sentence, "my name is zhora");
-
+    if (sentence1 == sentence2)
+    {
+    	check = 2;
+    }
+  	ASSERT_EQ(2, check);
     sentence = "";
 }
 
 TEST(TEXTCHANGER, string_to_vector) 
 {
+	int check=0;
     string line = "shady please stand up";
     vector<string> sentence;
-    textchanger(line, sentence);
-    EXPECT_THAT(sentence[0], "shady ");
-    EXPECT_THAT(sentence[1],  "please ");
-    EXPECT_THAT(sentence[2], "stand ");
-    EXPECT_THAT(sentence[3], "up ");
-
-    clear.sentence();
+    textchanger(line, check);
+	ASSERT_EQ(1, check);
+    sentence.clear();
     line = "";
 }
 
@@ -280,6 +284,7 @@ TEST(SORTING, dedubl_sort_tester)
 
 TEST(SORTINGFULL, sortfull_tester) 
 {
+	int check = 0;
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     vector<string> sentenced;
