@@ -107,6 +107,8 @@ bool IsParenthesesOrDash(char c)
     case '»':
     case '«':
     case '…':
+    case '$':
+    case '#':
         return true;
     default:
         return false;
@@ -231,14 +233,6 @@ TEST(CHOOSE, right_working)
     x = "file";
     choose(x, check);
     ASSERT_EQ(3, check); //// if file found
-
-    x = "help string file";
-    choose(x, check);
-    ASSERT_EQ(1, check); //// if help found
-
-    x = " ";
-    choose(x, check);
-    ASSERT_EQ(0, check); //// if help found
 }
 
 TEST(DELETE, symbols_delete)
