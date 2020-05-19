@@ -258,7 +258,8 @@ TEST(DELETE, symbols_delete)
     	check = 2;
     }
   	ASSERT_EQ(2, check);
-    sentence = "";
+    sentence1 = "";
+    sentence2= "";
 }
 
 TEST(TEXTCHANGER, string_to_vector) 
