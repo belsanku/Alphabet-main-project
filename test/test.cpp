@@ -8,36 +8,6 @@
 
 using namespace std;
 
-void textchanger(string& line, vector<string>& sentence)
-{
-    stringstream ss(line);
-    string develop = "";
-    while (!ss.eof()) {
-        string temp;
-        ss >> temp;
-        develop += temp + " ";
-        develop += "* ";
-    }
-    string del("* ");
-    size_t next;
-    size_t prev = 0;
-    size_t delta = del.length();
-    while ((next = develop.find(del, prev)) != string::npos) {
-        string temp = develop.substr(prev, next - prev);
-        sentence.push_back(develop.substr(prev, next - prev));
-        prev = next + delta;
-    }
-    string temp = develop.substr(prev);
-    cout << temp << endl;
-    for (int i = 0; i < sentence.size(); ++i) {
-        if (sentence[i] == "") {
-            sentence.erase(sentence.begin() + i);
-        }
-    }
-    sentence.push_back(develop.substr(prev));
-    cout << endl;
-}
-
 void textchanger(string& line, int& check)
 {
     stringstream ss(line);
@@ -188,7 +158,7 @@ void textsort(vector<string>& sentence, int& check)
 
     vector<string> sentenced(nodubls.begin(), nodubls.end());
     if (sentenced[0] == "is" && sentenced[1] == "my" && sentenced[2] == "name"
-        && sentenced[3] == "please" && sentenced[4] == "shady") {
+        && sentenced[3] == "shady" && sentenced[4] == "slim") {
         check = 1;
     }
     nodubls.clear();
@@ -203,7 +173,7 @@ void textsortfull(vector<string>& sentence, int& check)
 
     vector<string> sentenced(sorted.begin(), sorted.end());
     if (sentenced[0] == "is" && sentenced[1] == "is" && sentenced[2] == "my"
-        && sentenced[3] == "my" && sentenced[4] == "name "
+        && sentenced[3] == "my" && sentenced[4] == "name"
         && sentenced[5] == "name" && sentenced[6] == "shady"
         && sentenced[7] == "slim") {
         check = 1;
