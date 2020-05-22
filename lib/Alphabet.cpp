@@ -1,28 +1,27 @@
-﻿#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <algorithm>
-#include <locale>
-#include <set>
-#include <ctype.h>
-#include "printer.h"
-#include "textsortfull.h"
-#include "textsort.h"
-#include "parent.h"
-#include "symbols.h"
-#include "textchanger.h"
-#include "supereraser.h"
 #include "Createfile.h"
-#include "stringin.h"
 #include "assistant.h"
 #include "choose.h"
+#include "parent.h"
+#include "printer.h"
+#include "stringin.h"
+#include "supereraser.h"
+#include "symbols.h"
+#include "textchanger.h"
+#include "textsort.h"
+#include "textsortfull.h"
+#include <algorithm>
+#include <ctype.h>
+#include <fstream>
+#include <iostream>
+#include <locale>
+#include <set>
+#include <sstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
+int main() {
     system("chcp 1251");
     string x, l;
     assistant();
