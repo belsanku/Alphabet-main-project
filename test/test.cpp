@@ -121,8 +121,8 @@ void choose(string& x, int& check)
 void CreateFile(int& check)
 {
     ofstream output("SortFile.txt");
-    if (!output.is_open()) 
-	 check = 0;
+    if (!output.is_open())
+	check = 0;
     output.close();
 }
 
