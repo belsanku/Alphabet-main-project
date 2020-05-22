@@ -21,16 +21,13 @@
 
 using namespace std;
 
-
-
 int main()
 {
-	system("chcp 1251");
-	string x, l;
-	assistant();
-	cout<<endl;
-	while (x != "exit")
-	{
-		choose(l, x);
-	}
+    system("chcp 1251");
+    string x, l;
+    assistant();
+    cout << endl;
+    while (x != "exit") {
+        choose(l, x);
+    }
 }
