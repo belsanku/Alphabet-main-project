@@ -118,11 +118,11 @@ void choose(string& x, int& check)
     cout << endl;
 }
 
-void CreateFile(int& check) 
+void CreateFile(int& check)
 {
     ofstream output("SortFile.txt");
     if (!output.is_open()) 
-	 check = 0;
+	check = 0;
     output.close();
 }
 
@@ -261,7 +261,7 @@ TEST(SORTINGFULL, sortfull_tester)
     ASSERT_EQ(1, check);
 }
 
-TEST(CRATEFILE, create_file) 
+TEST(CRATEFILE, create_file)
 {
     int check = 1;
     CreateFile(check);
