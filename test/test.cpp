@@ -1,3 +1,4 @@
+#include <fstream>
 #include <gtest/gtest.h>
 #include <iostream>
 #include <map>
@@ -5,7 +6,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <fstream>
 
 using namespace std;
 
@@ -121,7 +121,8 @@ void choose(string& x, int& check)
 void CreateFile(int& check) 
 {
     ofstream output("SortFile.txt");
-    if (!output.is_open()) check = 0;
+    if (!output.is_open()) 
+    	check = 0;
     output.close();
 }
 
@@ -259,7 +260,6 @@ TEST(SORTINGFULL, sortfull_tester)
     textsortfull(sentence, check);
     ASSERT_EQ(1, check);
 }
-
 
 TEST(CRATEFILE, create_file) 
 {
