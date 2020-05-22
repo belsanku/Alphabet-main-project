@@ -122,7 +122,7 @@ void CreateFile(int& check)
 {
     ofstream output("SortFile.txt");
     if (!output.is_open()) 
-    	check = 0;
+	   check = 0;
     output.close();
 }
 
