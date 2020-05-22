@@ -117,6 +117,13 @@ void choose(string& x, int& check)
     cout << endl;
 }
 
+void CreateFile(int& check) 
+{
+    ofstream output("SortFile.txt");
+    if (!output.is_open()) check = 0;
+    output.close();
+}
+
 void assistant(int& check)
 {
     cout << "The program for sorting text works as follows:" << endl
@@ -249,5 +256,13 @@ TEST(SORTINGFULL, sortfull_tester)
     vector<string> sentence
             = {"my", "name", "is", "slim", "shady", "name", "is", "my"};
     textsortfull(sentence, check);
+    ASSERT_EQ(1, check);
+}
+
+
+TEST(CRATEFILE, create_file) 
+{
+    int check = 1;
+    CreateFile(check);
     ASSERT_EQ(1, check);
 }
