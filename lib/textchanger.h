@@ -1,21 +1,21 @@
-#include "Createfile.h"
-#include "assistant.h"
-#include "parent.h"
-#include "printer.h"
-#include "stringin.h"
-#include "supereraser.h"
-#include "symbols.h"
-#include "textsort.h"
-#include "textsortfull.h"
-#include <algorithm>
-#include <ctype.h>
-#include <fstream>
+#include <string>
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
 #include <locale>
 #include <set>
-#include <sstream>
-#include <string>
-#include <vector>
+#include <ctype.h>
+#include "assistant.h"
+#include "parent.h"
+#include "textsort.h"
+#include "printer.h"
+#include "symbols.h"
+#include "supereraser.h"
+#include "textsortfull.h"
+#include "Createfile.h"
+#include "stringin.h"
 
 using namespace std;
 

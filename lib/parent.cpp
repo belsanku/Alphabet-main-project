@@ -1,7 +1,9 @@
 #include <iostream>
 
-bool IsParenthesesOrDash(char c) {
-    switch (c) {
+bool IsParenthesesOrDash(char c)
+{
+    switch (c)
+    {
     case '(':
     case ')':
     case '-':
