@@ -5,6 +5,7 @@
 #include <locale>
 #include <set>
 #include <ctype.h>
+#include <conio.h>
 #include "parent.h"
 #include "printer.h"
 #include "symbols.h"
@@ -15,8 +16,9 @@ void textsort(vector<string>& sentence, string& line, string& x)
 {
 	size_t pos = x.find("string");
 	bool str = false;
-	if (pos != string::npos)
+	if (pos != string::npos) {
 		str = true;
+	}
 	if (str == true)
 	{
 		set<string>nodubls;
@@ -37,8 +39,24 @@ void textsort(vector<string>& sentence, string& line, string& x)
 
 		vector<string>sentence1(nodubl.begin(), nodubl.end());
 
-		for (unsigned int i = 0; i < sentence1.size(); i++)
-			line += sentence1[i] + "\n";
+		size_t rev = x.find("-r");
+		bool da = false;
+		if (rev != string::npos)
+		{
+			da = true;
+		}
+		if (da == true)
+		{
+			for (int i = sentence1.size() - 1; i >= 0; --i)
+				line += sentence1[i] + "\n";
+		}
+		else
+		{
+			for (unsigned int i = 0; i < sentence1.size(); i++)
+			{
+				line += sentence1[i] + "\n";
+			}
+		}
 		nodubl.clear();
 	}
 }
