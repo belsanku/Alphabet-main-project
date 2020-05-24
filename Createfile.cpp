@@ -22,18 +22,14 @@ void CreateFile(string& x)
 	cout << "Enter the path: "<<endl;
 	getline(cin, path);
 	ifstream input(path);
-	if (!input.is_open()) // Проверка, открыт ли файл
-	{
-		cout << "File can't be open!\n";
-		return;
-	}
 	ofstream output("SortFile.txt");
 	while (input) {
 		getline(input, line);
+		if (!input) break;
 		if (line.length())
 			buf += line + "\n";
 	}
-	//cout << path; // проверка на правильность введенного пути
+	cout << path;
 	supereraser(buf, x);
 	output << buf;
 	input.close();
