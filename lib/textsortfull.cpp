@@ -27,7 +27,7 @@ void textsortfull(vector<string>& sentence, string& line, string& x)
 		printer(sentenced, x);
 	}else
 		{
-			sentence.resize(sentence.size() - 2);
+			sentence.resize(sentence.size() - 1);
 			line = "";
 			multiset<string>filesort;
 			for (vector<string>::iterator p = sentence.begin(); p != sentence.end(); ++p)
@@ -43,12 +43,12 @@ void textsortfull(vector<string>& sentence, string& line, string& x)
 			}
 			if (da == true) 
 			{
-				for (unsigned int i = sentence1.size()-1; i >= 0; --i)
+				for (int i = sentence1.size() - 1; i >= 0; --i)
 					line += sentence1[i] + "\n";
 			}
 			else
 			{
-				for (unsigned int i = 0; i < sentence1.size(); i++)
+				for (int i = 0; i < sentence1.size(); i++)
 					line += sentence1[i] + "\n";
 			}
 		}
