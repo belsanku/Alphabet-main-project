@@ -46,8 +46,11 @@ void textsort(vector<string>& sentence, string& line, string& x)
 		}
 		if (da == true)
 		{
-			for (int i = sentence1.size() - 1; i >= 0; --i)
+			for (unsigned int i = sentence1.size() - 1; i >= 0; --i)
+			{
 				line += sentence1[i] + "\n";
+				if (i == 0) break;
+			}
 		}
 		else
 		{
