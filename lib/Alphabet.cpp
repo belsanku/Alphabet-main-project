@@ -1,29 +1,29 @@
-#include "Createfile.h"
-#include "assistant.h"
-#include "choose.h"
-#include "parent.h"
-#include "printer.h"
-#include "stringin.h"
-#include "supereraser.h"
-#include "symbols.h"
-#include "textchanger.h"
-#include "textsort.h"
-#include "textsortfull.h"
-#include <algorithm>
-#include <ctype.h>
-#include <fstream>
+#include <string>
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
 #include <locale>
 #include <set>
-#include <sstream>
-#include <string>
-#include <vector>
+#include <ctype.h>
+#include "printer.h"
+#include "textsortfull.h"
+#include "textsort.h"
+#include "parent.h"
+#include "symbols.h"
+#include "textchanger.h"
+#include "supereraser.h"
+#include "Createfile.h"
+#include "stringin.h"
+#include "assistant.h"
+#include "choose.h"
 
 using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "Russian");
     string x, l;
     assistant();
     cout << endl;
