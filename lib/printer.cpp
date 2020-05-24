@@ -17,6 +17,7 @@ void printer(vector<string>& sentence1, string& x)
 		for (unsigned int i = sentence1.size()-1; i >= 0; --i)
 		{
 			cout << sentence1[i] << endl;
+			if (i == 0) break;
 		}
 	}
 	else
