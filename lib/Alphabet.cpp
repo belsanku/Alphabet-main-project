@@ -1,4 +1,4 @@
-﻿#include <string>
+#include <string>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -23,7 +23,7 @@ using namespace std;
 
 int main()
 {
-    system("chcp 1251");
+	setlocale(LC_ALL, "Russian");
     string x, l;
     assistant();
     cout << endl;
