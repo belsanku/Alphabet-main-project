@@ -5,8 +5,8 @@
 
 using namespace std;
 
-void stringin(string& l, string& x)
+void stringin(string &l, string &x)
 {
-	getline(cin, l);
-	supereraser(l, x);
+    getline(cin, l);
+    supereraser(l, x);
 }
