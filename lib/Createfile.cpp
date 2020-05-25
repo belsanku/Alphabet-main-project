@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void CreateFile(string& x)
+void CreateFile(string &x)
 {
     string line, buf = "", path;
     cout << "Enter the path: " << endl;

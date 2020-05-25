@@ -1,6 +1,4 @@
-#include <string>
-#include <iostream>
-#include <fstream>
+﻿#include <fstream>
 #include <sstream>
 #include <vector>
 #include <algorithm>
@@ -23,7 +21,7 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+    setlocale(LC_ALL, "Russian");
     string x, l;
     assistant();
     cout << endl;
