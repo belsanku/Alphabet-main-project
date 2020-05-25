@@ -8,11 +8,10 @@
 
 using namespace std;
 
-void symbols(string& sentence, string& x)
+void symbols(string &sentence, string &x)
 {
     setlocale(LC_ALL, "Russian");
-    for (unsigned int i = 0; i < sentence.size(); i++)
-    {
+    for (unsigned int i = 0; i < sentence.size(); i++) {
         sentence[i] = (char)tolower(sentence[i]);
     }
 }
