@@ -38,8 +38,8 @@ void textchanger(string& line, int& check)
     }
     sentence.push_back(develop.substr(prev));
     cout << endl;
-    if (sentence[0] == "shady" && sentence[1] == "please"
-        && sentence[2] == "stand" && sentence[3] == "up")
+    if (sentence[0] == "shady " && sentence[1] == "please "
+        && sentence[2] == "stand " && sentence[3] == "up ")
     {
         check = 1;
     }
