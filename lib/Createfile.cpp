@@ -15,7 +15,7 @@ using namespace std;
 void CreateFile(string &x)
 {
     string line, buf = "", path;
-    cout << "Enter the path: " << endl;
+    cout << "Enter the name: " << endl;
     getline(cin, path);
     ifstream input(path);
     ofstream output("SortFile.txt");
