@@ -32,6 +32,7 @@ void CreateFile(string &x)
     input.close();
     path = "";
     output.close();
+    cout<<"SortFile.txt ready to be open."<<endl;
     buf = "";
     line = "";
 }
