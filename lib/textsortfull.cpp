@@ -1,15 +1,15 @@
-#include <string>
-#include <iostream>
-#include <vector>
-#include <set>
+#include "textsortfull.h"
 #include "printer.h"
-#include "textchanger.h"
 #include "symbols.h"
-#include "textsortfull.h" 
+#include "textchanger.h"
+#include <iostream>
+#include <set>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-void textsortfull(vector<string> &sentence, string &line, string &x)
+void textsortfull(vector<string>& sentence, string& line, string& x)
 {
     size_t pos = x.find("string");
     bool str = false;

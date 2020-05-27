@@ -1,19 +1,18 @@
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <algorithm>
-#include "textsort.h"
-#include "symbols.h"
-#include "supereraser.h"
-#include "textsortfull.h"
 #include "stringin.h"
 #include "supereraser.h"
+#include "symbols.h"
+#include "textsort.h"
+#include "textsortfull.h"
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-void textchanger(string &line, string &x)
+void textchanger(string& line, string& x)
 {
     stringstream ss(line);
     string develop = "";
