@@ -1,12 +1,12 @@
-#include <string>
-#include <iostream>
-#include <vector>
-#include <algorithm>
 #include "printer.h"
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-void printer(vector<string> &sentence1, string &x)
+void printer(vector<string>& sentence1, string& x)
 {
     size_t pos = x.find("-r");
     bool reverse = false;

@@ -1,13 +1,13 @@
+#include "Createfile.h"
+#include "assistant.h"
+#include "stringin.h"
 #include <cstdio>
 #include <iostream>
 #include <string>
-#include "assistant.h"
-#include "stringin.h"
-#include "Createfile.h"
 
 using namespace std;
 
-void choose(string &l, string &x)
+void choose(string& l, string& x)
 {
     getline(cin, x);
     if (x == "help") {
