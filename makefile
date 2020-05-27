@@ -5,6 +5,7 @@ EXE = bin/Alphabet-main-project
 TESTS = bin/test
 DIR_SRC = build/src
 DIR_INCLUDE = lib
+TEST_INCLUDE = modul_tests
 DIR_TEST = build/test
 GTEST_D = thirdparty/googletest
 LD_FLAGS = -L $(GTEST_D)/lib -lgtest_main -lpthread
@@ -13,8 +14,8 @@ CXX += -g -Wall -Wextra -pthread -std=c++17
 
 all: $(EXE)	$(TESTS)
 
-$(EXE): $(DIR_SRC)/Alphabet.o $(DIR_SRC)/assistant.o $(DIR_SRC)/choose.o $(DIR_SRC)/Createfile.o $(DIR_SRC)/parent.o $(DIR_SRC)/printer.o $(DIR_SRC)/stringin.o $(DIR_SRC)/supereraser.o $(DIR_SRC)/symbols.o $(DIR_SRC)/textchanger.o $(DIR_SRC)/textsort.o $(DIR_SRC)/textsortfull.o
-	$(CC) $(CXXFLAGS) $(DIR_SRC)/Alphabet.o $(DIR_SRC)/assistant.o $(DIR_SRC)/choose.o $(DIR_SRC)/Createfile.o $(DIR_SRC)/parent.o $(DIR_SRC)/printer.o $(DIR_SRC)/stringin.o $(DIR_SRC)/supereraser.o $(DIR_SRC)/symbols.o $(DIR_SRC)/textchanger.o $(DIR_SRC)/textsort.o $(DIR_SRC)/textsortfull.o -o $(EXE)
+$(EXE): $(DIR_SRC)/Alphabet.o $(DIR_SRC)/assistant.o $(DIR_SRC)/choose.o $(DIR_SRC)/Createfile.o $(DIR_SRC)/parent.o $(DIR_SRC)/printer.o $(DIR_SRC)/stringin.o $(DIR_SRC)/supereraser.o $(DIR_SRC)/symbols.o $(DIR_SRC)/textchanger.o $(DIR_SRC)/textsort.o $(DIR_SRC)/textsortfull.o $(DIR_SRC)/tchoose.o $(DIR_SRC)/ttextchanger.o $(DIR_SRC)/tCreatefile.o $(DIR_SRC)/tsupereraser.o $(DIR_SRC)/tprinter.o $(DIR_SRC)/tsort_dedubl.o $(DIR_SRC)/ttextsortfull.o
+	$(CC) $(CXXFLAGS) $(DIR_SRC)/Alphabet.o $(DIR_SRC)/assistant.o $(DIR_SRC)/choose.o $(DIR_SRC)/Createfile.o $(DIR_SRC)/parent.o $(DIR_SRC)/printer.o $(DIR_SRC)/stringin.o $(DIR_SRC)/supereraser.o $(DIR_SRC)/symbols.o $(DIR_SRC)/textchanger.o $(DIR_SRC)/textsort.o $(DIR_SRC)/textsortfull.o $(DIR_SRC)/tchoose.o $(DIR_SRC)/ttextchanger.o $(DIR_SRC)/tCreatefile.o $(DIR_SRC)/tsupereraser.o $(DIR_SRC)/tprinter.o $(DIR_SRC)/tsort_dedubl.o $(DIR_SRC)/ttextsortfull.o -o $(EXE)
 
 $(DIR_SRC)/Alphabet.o: lib/Alphabet.cpp
 	$(CC) $(CXXFLAGS) -I $(DIR_INCLUDE) -c lib/Alphabet.cpp -o $(DIR_SRC)/Alphabet.o
@@ -51,9 +52,30 @@ $(DIR_SRC)/textsort.o: lib/textsort.cpp
 
 $(DIR_SRC)/textsortfull.o: lib/textsortfull.cpp
 	$(CC) $(CXXFLAGS) -I $(DIR_INCLUDE) -c lib/textsortfull.cpp -o $(DIR_SRC)/textsortfull.o
+	
+$(DIR_SRC)/tchoose.o: modul_tests/tchoose.cpp
+	$(CC) $(CXXFLAGS) -I $(TEST_INCLUDE) -c modul_tests/tchoose.cpp -o $(DIR_SRC)/tchoose.o
 
-$(TESTS) : $(DIR_TEST)/test.o
-	$(CXX) $(CFLAG) $(LD_FLAGS) $(DIR_TEST)/test.o -o $(TESTS)
+$(DIR_SRC)/ttextchanger.o: modul_tests/ttextchanger.cpp
+	$(CC) $(CXXFLAGS) -I $(TEST_INCLUDE) -c modul_tests/ttextchanger.cpp -o $(DIR_SRC)/ttextchanger.o
+	
+$(DIR_SRC)/tCreatefile.o: modul_tests/tCreatefile.cpp
+	$(CC) $(CXXFLAGS) -I $(TEST_INCLUDE) -c modul_tests/tCreatefile.cpp -o $(DIR_SRC)/tCreatefile.o	
+	
+$(DIR_SRC)/tsupereraser.o: modul_tests/tsupereraser.cpp
+	$(CC) $(CXXFLAGS) -I $(TEST_INCLUDE) -I lib/ -c modul_tests/tsupereraser.cpp -o $(DIR_SRC)/tsupereraser.o
+	
+$(DIR_SRC)/tprinter.o: modul_tests/tprinter.cpp
+	$(CC) $(CXXFLAGS) -I $(TEST_INCLUDE) -I lib/ -c modul_tests/tprinter.cpp -o $(DIR_SRC)/tprinter.o
+	
+$(DIR_SRC)/tsort_dedubl.o: modul_tests/tsort_dedubl.cpp
+	$(CC) $(CXXFLAGS) -I $(TEST_INCLUDE) -I lib/ -c modul_tests/tsort_dedubl.cpp -o $(DIR_SRC)/tsort_dedubl.o
+	
+$(DIR_SRC)/ttextsortfull.o: modul_tests/ttextsortfull.cpp
+	$(CC) $(CXXFLAGS) -I $(TEST_INCLUDE) -I lib/ -c modul_tests/ttextsortfull.cpp -o $(DIR_SRC)/ttextsortfull.o
+	
+$(TESTS) : $(DIR_SRC)/symbols.o $(DIR_SRC)/parent.o $(DIR_SRC)/tchoose.o $(DIR_SRC)/ttextchanger.o $(DIR_SRC)/tCreatefile.o $(DIR_SRC)/tsupereraser.o $(DIR_SRC)/tprinter.o $(DIR_SRC)/ttextsortfull.o $(DIR_TEST)/test.o
+	$(CXX) $(CFLAG) $(DIR_SRC)/parent.o $(DIR_SRC)/symbols.o $(DIR_SRC)/tchoose.o $(DIR_SRC)/ttextchanger.o $(DIR_SRC)/tCreatefile.o $(DIR_SRC)/tsupereraser.o $(DIR_SRC)/tprinter.o $(DIR_SRC)/tsort_dedubl.o $(DIR_SRC)/ttextsortfull.o $(LD_FLAGS) $(DIR_TEST)/test.o -o $(TESTS)
 
 $(DIR_TEST)/test.o: test/test.cpp
 	$(CXX) $(CFLAG) -I $(GTEST_D)/include -I lib -c test/test.cpp -o $(DIR_TEST)/test.o
