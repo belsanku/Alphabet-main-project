@@ -18,12 +18,6 @@ void assistant()
             "will "
             "occur ||"
          << endl;
-    cout << "If you are working with a .txt file containing Russian letters, "
-            "you "
-            "must change the file encoding to ANSI"
-         << endl;
-    cout << "Otherwise, at the exit you will receive an ancient elven language"
-         << endl;
     cout << "After you have specified the parameter, write what the program "
             "should work with"
          << endl;
