@@ -1,18 +1,14 @@
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <algorithm>
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
 #include "supereraser.h"
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-void CreateFile(string &x)
+void CreateFile(string& x)
 {
     string line, buf = "", path;
     cout << "Enter the name: " << endl;
@@ -32,7 +28,7 @@ void CreateFile(string &x)
     input.close();
     path = "";
     output.close();
-    cout<<"SortFile.txt ready to be open."<<endl;
+    cout << "SortFile.txt ready to be open." << endl;
     buf = "";
     line = "";
 }
