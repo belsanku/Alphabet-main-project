@@ -1,13 +1,13 @@
-#include <string>
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include "textchanger.h"
-#include "symbols.h"
 #include "supereraser.h"
 #include "stringin.h"
+#include "symbols.h"
+#include "textchanger.h"
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
-void supereraser(string &sentence, string &x)
+void supereraser(string& sentence, string& x)
 {
     size_t pos = x.find("-A");
     bool symb = false;

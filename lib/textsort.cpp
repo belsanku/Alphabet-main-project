@@ -1,17 +1,17 @@
-#include <string>
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <locale>
-#include <set>
-#include <ctype.h>
 #include "parent.h"
 #include "printer.h"
 #include "symbols.h"
+#include <algorithm>
+#include <ctype.h>
+#include <iostream>
+#include <locale>
+#include <set>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-void textsort(vector<string> &sentence, string &line, string &x)
+void textsort(vector<string>& sentence, string& line, string& x)
 {
     size_t pos = x.find("string");
     bool str = false;
