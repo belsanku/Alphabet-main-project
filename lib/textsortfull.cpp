@@ -36,11 +36,11 @@ void textsortfull(vector<string>& sentence, string& line, string& x)
         vector<string> sentence1(filesort.begin(), filesort.end());
         filesort.clear();
         size_t rev = x.find("-r");
-        bool da = false;
+        bool reverse = false;
         if (rev != string::npos) {
-            da = true;
+            reverse = true;
         }
-        if (da == true) {
+        if (reverse == true) {
             for (unsigned int i = sentence1.size() - 1; i >= 0; --i) {
                 line += sentence1[i] + "\n";
                 if (i == 0)
