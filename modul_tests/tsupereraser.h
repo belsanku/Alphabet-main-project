@@ -1,4 +1,4 @@
 #pragma once
 #include <iostream>
 #include <string>
-void supereraser(string& sentence, string& x, int& check);
+void supereraser(std::string& sentence, std::string& x, int& check);
