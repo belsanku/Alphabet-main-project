@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-void textsort(vector<string>& sentence, string& line, string& x, int& check);
+using std::string;
+void textsort(
+        std::vector<string>& sentence, string& line, string& x, int& check);

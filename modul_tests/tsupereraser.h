@@ -1,4 +1,3 @@
 #pragma once
-#include <iostream>
-#include <string>
+using std::string;
 void supereraser(string& sentence, string& x, int& check);

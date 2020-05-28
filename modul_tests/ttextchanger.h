@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <vector>
-void textchanger(string& line, string& x, int& check, vector<string>& sentence);
+using std::string;
+void textchanger(
+        string& line, string& x, int& check, std::vector<string>& sentence);
