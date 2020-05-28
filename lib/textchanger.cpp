@@ -43,10 +43,10 @@ void textchanger(string& line, string& x)
     cout << endl;
     ////////////////////////
     size_t pos = x.find("-d");
-    bool ded = false;
+    bool dedubl = false;
     if (pos != string::npos)
-        ded = true;
-    if (ded == true) {
+        dedubl = true;
+    if (dedubl == true) {
         textsort(sentence, line, x);
     } else {
         textsortfull(sentence, line, x);
