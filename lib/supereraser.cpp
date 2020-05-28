@@ -2,6 +2,7 @@
 #include "stringin.h"
 #include "symbols.h"
 #include "textchanger.h"
+#include "parent.h"
 #include <algorithm>
 #include <iostream>
 #include <string>
