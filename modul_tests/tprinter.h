@@ -1,3 +1,4 @@
 #pragma once
-using std::string;
-void printer(std::vector<string>& sentence1, string& x, int& check);
+#include <string>
+#include <vector>
+void printer(vector<string>& sentence1, string& x, int& check);

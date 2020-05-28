@@ -1,4 +1,5 @@
 #pragma once
-using std::string;
+#include <string>
+#include <vector>
 void textsortfull(
-        std::vector<string>& sentence, string& line, string& x, int& check);
+        vector<string>& sentence, string& line, string& x, int& check);

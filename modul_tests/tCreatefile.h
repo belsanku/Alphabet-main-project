@@ -1,3 +1,4 @@
 #pragma once
-using std::string;
+#include <iostream>
+#include <string>
 void CreateFile(string& x, int& check);

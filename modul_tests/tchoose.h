@@ -1,2 +1,4 @@
 #pragma once
-void choose(std::string& l, std::string& x, int& check);
+#include <iostream>
+#include <string>
+void choose(string& l, string& x, int& check);
